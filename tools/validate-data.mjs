@@ -1,6 +1,6 @@
-// Checks football-coach/data for legal formations and consistent references.
-// Usage: node football-coach/tools/validate-data.mjs
-// The rules mirror football-coach/knowledge/12-simulator-data-model.md.
+// Checks data/ for legal formations and consistent references.
+// Usage: node tools/validate-data.mjs
+// The rules mirror knowledge/12-simulator-data-model.md.
 
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -131,7 +131,7 @@ function checkAssignment(where, start, assignment, defenderIds) {
   }
 }
 
-function checkPlay(play, formationsById) {
+function checkPlay(play, formationsById, zones) {
   const where = `play ${play.id}`;
   if (!PLAY_TYPES.includes(play.type)) fail(where, `unknown type "${play.type}"`);
   const formation = formationsById.get(play.formation);
@@ -172,6 +172,9 @@ function checkPlay(play, formationsById) {
     for (const tag of play[field] ?? []) {
       if (!TAGS.includes(tag)) fail(where, `unknown ${field} tag "${tag}"`);
     }
+  }
+  for (const zone of play.conflict ?? []) {
+    if (!(zone in zones)) fail(where, `unknown conflict zone "${zone}"`);
   }
   for (const field of ['name', 'concept', 'read']) {
     if (typeof play[field] !== 'string' || play[field].length === 0) fail(where, `missing ${field}`);
@@ -245,7 +248,7 @@ checkUniqueIds('defenses.json', defenses);
 
 const formationsById = new Map(formations.map((formation) => [formation.id, formation]));
 formations.forEach(checkFormation);
-plays.forEach((play) => checkPlay(play, formationsById));
+plays.forEach((play) => checkPlay(play, formationsById, zones));
 checkZones(zones);
 defenses.forEach((defense) => checkDefense(defense, zones));
 

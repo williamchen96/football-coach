@@ -1,6 +1,6 @@
 # Simulator data model
 
-The files in `football-coach/data/` describe football in a form a program can draw and simulate. They share one coordinate system and one set of names. Run `node football-coach/tools/validate-data.mjs` after every change.
+The files in `data/` describe football in a form a program can draw and simulate. They share one coordinate system and one set of names. Run `node tools/validate-data.mjs` after every change.
 
 ## Coordinate system
 
@@ -48,6 +48,7 @@ Defense: `E1` and `T1` are the end and tackle on the offense's right; `T2` and `
     "X": { "action": "route", "route": "hitch", "path": [[0, 6], [0.5, 5]] }
   },
   "read": "...",
+  "conflict": ["flat-left"],
   "bestVs": ["cover-2"],
   "struggleVs": ["cover-4"],
   "coachingPoints": ["..."]
@@ -70,6 +71,7 @@ Defense: `E1` and `T1` are the end and tackle on the offense's right; `T2` and `
 - `block` values: `zone`, `reach`, `base`, `down`, `double`, `cutoff`, `hinge`, `pull-kick`, `pull-wrap`, `kick-out`, `lead`, `stalk`, `pass-set`. Run blocks may carry `direction` (`left` or `right`).
 - Quarterback `drop` values: `none`, `quick`, `three-step`, `five-step`, `seven-step`, `play-action`, `boot`. Counts are shotgun steps when the formation is shotgun.
 - Quarterback `mesh` values: `none`, `handoff`, `fake`, `read`. A `read` mesh needs a `readKey` naming the defender.
+- `conflict` is optional: the zones whose defender the play puts in conflict, most likely first. The simulator rings whoever plays the first of those zones on the chosen call. Against man coverage nobody does, so nobody is ringed. Leave it out for plays with no zone read.
 - `bestVs` and `struggleVs` use coverage tags: `cover-0`, `cover-1`, `cover-2`, `tampa-2`, `2-man`, `cover-3`, `cover-4`, `cover-6`, `pressure`, `light-box`, `loaded-box`.
 
 ## defenses.json
@@ -105,11 +107,11 @@ Each zone is a rectangle with `x` and `y` ranges in the field coordinate system.
 
 ## Design notes for the simulator
 
-These are open decisions for when the app is planned.
+What the app does today, and what is still open. `ROADMAP.md` tracks the status.
 
-- **Alignment rules.** A defensive call should align to the offense. The simplest workable rule set: corners align on #1 to each side, the nickel on the slot (or the passing strength), linebackers shift half a gap toward the run strength, safeties set their width from the hash and the number of receivers. Mirror the call when the tight end is on the left.
+- **Alignment rules.** Built so far (`alignDefense` in `src/sim.ts`): corners line up on the widest receiver, a man defender lines up over his man with the shade the call gave him, and a man defender whose receiver is not in the formation takes the eligible nobody else has. Zone defenders, the front and the personnel do not move yet. The fuller rule set: corners align on #1 to each side, the nickel on the slot (or the passing strength), linebackers shift half a gap toward the run strength, safeties set their width from the hash and the number of receivers. Mirror the call when the tight end is on the left.
 - **Man assignments by count.** Storing targets as letters works for the starter set. Counting rules (`#1 left`, `#2 strong`) generalize better to any formation.
 - **Timing.** Give routes a speed so a break arrives on a clock, and tie the quarterback's drop to it. Rough values: receivers 7 to 8 yards per second at full speed, a three-step drop about 1.5 seconds, five-step about 2.0 to 2.5, a four-man rush arriving in roughly 2.5 to 3.0.
-- **Outcome model.** For teaching, the result of a play should follow from leverage: which defender is in conflict, whether the offense has numbers in the box, whether a zone has two receivers and one defender. A readable rule-based model teaches more than a physics model.
+- **Outcome model.** Built so far (`src/matchup.ts`): the edge goes to whichever side has more matching tags, comparing the play's `bestVs` and `struggleVs` with what the call shows (its coverage, `pressure` at five or more rushers, and `loaded-box` when the defenders within 7 yards of the ball and 7.5 of the line outnumber the line, attached tight ends and fullback). The next step is leverage on the field. For teaching, the result of a play should follow from leverage: which defender is in conflict, whether the offense has numbers in the box, whether a zone has two receivers and one defender. A readable rule-based model teaches more than a physics model.
 - **What to show the learner.** The pre-snap picture and a prompt to predict; the conflict defender highlighted during the play; afterwards, why the play worked or failed against that call.
 - **Match rules and motion** are the next modeling steps after static zone and man.

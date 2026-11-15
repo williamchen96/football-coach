@@ -152,6 +152,7 @@
         "QB": { "action": "qb", "drop": "quick", "mesh": "none" }
       },
       "read": "Pick a side before the snap by leverage and space. Read the flat defender: he widens with the flat, throw the slant; he sits in the slant window, throw the flat.",
+      "conflict": ["flat-left"],
       "bestVs": ["cover-3", "cover-4", "cover-1", "pressure"],
       "struggleVs": ["cover-2", "tampa-2"],
       "coachingPoints": [
@@ -180,6 +181,7 @@
         "QB": { "action": "qb", "drop": "quick", "mesh": "none" }
       },
       "read": "Fade is an alert against press with no safety over the top. Then read the flat defender: he widens with the flat, throw the stick; he hangs inside on the stick, throw the flat.",
+      "conflict": ["flat-right"],
       "bestVs": ["cover-3", "cover-4", "cover-6"],
       "struggleVs": ["cover-1", "cover-2"],
       "coachingPoints": [
@@ -208,6 +210,7 @@
         "QB": { "action": "qb", "drop": "three-step", "mesh": "none" }
       },
       "read": "Read the cornerback on the chosen side: he sinks under the corner route, throw the hitch; he squats on the hitch, throw the corner into the hole behind him.",
+      "conflict": ["flat-left"],
       "bestVs": ["cover-2", "tampa-2", "cover-6"],
       "struggleVs": ["cover-4", "cover-3"],
       "coachingPoints": [
@@ -236,12 +239,14 @@
         "QB": { "action": "qb", "drop": "five-step", "mesh": "none" }
       },
       "read": "One deep safety: hold him with your eyes and throw the seam he leaves, on a line at 18 to 22 yards. Two deep safeties: a seam bends across the middle between them, or throw the hole shot outside against Cover 2.",
+      "conflict": ["deep-third-middle", "deep-half-left"],
       "bestVs": ["cover-3", "cover-2", "cover-1"],
-      "struggleVs": ["cover-4", "pressure"],
+      "struggleVs": ["cover-4", "tampa-2", "pressure"],
       "coachingPoints": [
         "Landmarks matter: outside receivers on the bottom of the numbers, seams 2 yards outside the hashes.",
         "The seam ball is thrown before the receiver clears the linebackers, not lofted.",
-        "It needs time. Check the ball down against pressure."
+        "It needs time. Check the ball down against pressure.",
+        "Against Tampa 2 the Mike runs with the seams and closes the deep middle, which leaves the hole shot outside or the check-down."
       ]
     },
     {
@@ -264,6 +269,7 @@
         "QB": { "action": "qb", "drop": "three-step", "mesh": "none" }
       },
       "read": "Against man: throw the crosser who comes free off the rub, hitting him on the run. Against zone: the crossers settle in the windows between the hook defenders. The corner route is the alert against a squat corner, the wheel against a linebacker in man.",
+      "conflict": ["hook-left", "hole"],
       "bestVs": ["cover-1", "cover-0", "2-man"],
       "struggleVs": ["cover-3", "cover-4"],
       "coachingPoints": [
@@ -292,6 +298,7 @@
         "QB": { "action": "qb", "drop": "five-step", "mesh": "none" }
       },
       "read": "The seam is an alert if the safeties split wide. Then read the hook defender on the dig side: he sinks under the dig, throw the drag; he jumps the drag, throw the dig into the space behind the linebackers.",
+      "conflict": ["hook-right", "hole"],
       "bestVs": ["cover-3", "cover-1", "cover-4"],
       "struggleVs": ["cover-2", "tampa-2", "pressure"],
       "coachingPoints": [
@@ -320,6 +327,7 @@
         "QB": { "action": "qb", "drop": "boot", "mesh": "fake", "path": [[-1.5, -3], [1, -6], [8, -7], [11, -5]] }
       },
       "read": "Low to high on the boot side: the flat now, then the crosser at 12 to 15 yards, then run. The go route is an alert if the deep-third defender is beaten.",
+      "conflict": ["flat-right"],
       "bestVs": ["cover-3", "cover-1", "loaded-box"],
       "struggleVs": ["cover-2", "pressure"],
       "coachingPoints": [
@@ -353,6 +361,7 @@
         }
       },
       "read": "Before the snap: if nobody covers the slot, throw the bubble. After the snap, ride the mesh and read the weak hook defender: he steps up to fit the run, pull and throw the glance behind him; he stays in the throwing lane, hand off.",
+      "conflict": ["hook-left", "curl-left"],
       "bestVs": ["cover-3", "cover-4", "loaded-box"],
       "struggleVs": ["cover-1", "cover-0", "cover-2"],
       "coachingPoints": [
