@@ -122,14 +122,17 @@ export function App() {
       </header>
 
       <nav aria-label="Playbook">
-        <h2>Formation</h2>
+        <details open>
+          <summary><h2>Formation</h2></summary>
         <div className="chips">
           {formations.map((f) => (
             <Chip key={f.id} on={f.id === formationId} onClick={() => chooseFormation(f)}>{f.name}</Chip>
           ))}
         </div>
+        </details>
 
-        <h2>Play</h2>
+        <details open>
+          <summary><h2>Play</h2></summary>
         <div className="chips">
           {TYPES.map((x) => (
             <Chip key={x} on={x === type} onClick={() => setType(x)}>{label(x)}</Chip>
@@ -145,8 +148,10 @@ export function App() {
             </li>
           ))}
         </ul>
+        </details>
 
-        <h2>Defense</h2>
+        <details open>
+          <summary><h2>Defense</h2></summary>
         <div className="chips">
           <Chip on={!defense} onClick={() => { setDefenseId(undefined); setSelected(null); }}>None</Chip>
           {defenses.map((d) => (
@@ -155,6 +160,7 @@ export function App() {
             </Chip>
           ))}
         </div>
+        </details>
       </nav>
 
       <main>

@@ -55,6 +55,9 @@ aside section > h2 { font-size: 1.05rem; text-transform: none; letter-spacing: 0
 aside ul { margin: 0.3rem 0; padding-left: 1.1rem; }
 .meta { color: var(--muted); font-size: 0.85rem; }
 
+nav summary { cursor: pointer; margin: 1rem 0 0.4rem; color: var(--muted); }
+nav summary h2 { display: inline; margin: 0; }
+
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip, .controls button, aside button {
   border: 1px solid var(--line);
