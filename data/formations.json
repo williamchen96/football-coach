@@ -1,0 +1,130 @@
+{
+  "formations": [
+    {
+      "id": "i-pro-right",
+      "name": "I Pro Right",
+      "personnel": "21",
+      "qb": "under-center",
+      "distribution": "2x1",
+      "notes": "Fullback and tailback stacked, tight end right. Lead runs, power, play-action.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "Y", "x": 4.5, "y": 0 },
+        { "id": "X", "x": -18, "y": 0 },
+        { "id": "Z", "x": 18, "y": -1 },
+        { "id": "QB", "x": 0, "y": -1 },
+        { "id": "FB", "x": 0, "y": -4.5 },
+        { "id": "RB", "x": 0, "y": -7 }
+      ]
+    },
+    {
+      "id": "singleback-ace",
+      "name": "Singleback Ace",
+      "personnel": "12",
+      "qb": "under-center",
+      "distribution": "2x2",
+      "notes": "A tight end on each side, so the defense has no run strength to set. Duo, zone both ways, play-action.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "U", "x": -4.5, "y": 0 },
+        { "id": "Y", "x": 4.5, "y": 0 },
+        { "id": "X", "x": -18, "y": -1 },
+        { "id": "Z", "x": 18, "y": -1 },
+        { "id": "QB", "x": 0, "y": -1 },
+        { "id": "RB", "x": 0, "y": -7 }
+      ]
+    },
+    {
+      "id": "uc-doubles",
+      "name": "Singleback Doubles",
+      "personnel": "11",
+      "qb": "under-center",
+      "distribution": "2x2",
+      "notes": "Under-center 11 personnel. The home of outside zone and the bootleg game.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "Y", "x": 4.5, "y": 0 },
+        { "id": "X", "x": -18, "y": 0 },
+        { "id": "H", "x": -10, "y": -1 },
+        { "id": "Z", "x": 18, "y": -1 },
+        { "id": "QB", "x": 0, "y": -1 },
+        { "id": "RB", "x": 0, "y": -7 }
+      ]
+    },
+    {
+      "id": "gun-doubles",
+      "name": "Gun Doubles",
+      "personnel": "11",
+      "qb": "shotgun",
+      "distribution": "2x2",
+      "notes": "Shotgun 2x2 with the tight end attached right and the back to the quarterback's left.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "Y", "x": 4.5, "y": 0 },
+        { "id": "X", "x": -18, "y": 0 },
+        { "id": "H", "x": -10, "y": -1 },
+        { "id": "Z", "x": 18, "y": -1 },
+        { "id": "QB", "x": 0, "y": -5 },
+        { "id": "RB", "x": -2, "y": -5 }
+      ]
+    },
+    {
+      "id": "gun-trey-right",
+      "name": "Gun Trey Right",
+      "personnel": "11",
+      "qb": "shotgun",
+      "distribution": "3x1",
+      "notes": "Three eligibles right with the tight end as #3, X alone on the left.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "Y", "x": 4.5, "y": 0 },
+        { "id": "X", "x": -18, "y": 0 },
+        { "id": "H", "x": 10, "y": -1 },
+        { "id": "Z", "x": 18, "y": -1 },
+        { "id": "QB", "x": 0, "y": -5 },
+        { "id": "RB", "x": -2, "y": -5 }
+      ]
+    },
+    {
+      "id": "gun-empty",
+      "name": "Gun Empty",
+      "personnel": "11",
+      "qb": "shotgun",
+      "distribution": "3x2",
+      "notes": "No back in the backfield: the back is the left slot, the tight end is flexed as #3 on the right. Five-man protection only.",
+      "players": [
+        { "id": "LT", "x": -3, "y": 0 },
+        { "id": "LG", "x": -1.5, "y": 0 },
+        { "id": "C", "x": 0, "y": 0 },
+        { "id": "RG", "x": 1.5, "y": 0 },
+        { "id": "RT", "x": 3, "y": 0 },
+        { "id": "X", "x": -18, "y": 0 },
+        { "id": "RB", "x": -10, "y": -1 },
+        { "id": "Y", "x": 6, "y": -1 },
+        { "id": "H", "x": 11, "y": -1 },
+        { "id": "Z", "x": 18, "y": 0 },
+        { "id": "QB", "x": 0, "y": -5 }
+      ]
+    }
+  ]
+}

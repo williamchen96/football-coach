@@ -1,0 +1,365 @@
+{
+  "plays": [
+    {
+      "id": "inside-zone",
+      "name": "Inside Zone Right",
+      "type": "run",
+      "formation": "gun-doubles",
+      "concept": "Zone run. Combination blocks create vertical movement; the back picks the crease.",
+      "assignments": {
+        "LT": { "action": "block", "block": "cutoff", "direction": "right" },
+        "LG": { "action": "block", "block": "zone", "direction": "right" },
+        "C": { "action": "block", "block": "zone", "direction": "right" },
+        "RG": { "action": "block", "block": "zone", "direction": "right" },
+        "RT": { "action": "block", "block": "zone", "direction": "right" },
+        "Y": { "action": "block", "block": "base", "target": "end man on the line" },
+        "X": { "action": "block", "block": "stalk" },
+        "H": { "action": "block", "block": "stalk" },
+        "Z": { "action": "block", "block": "stalk" },
+        "QB": { "action": "qb", "drop": "none", "mesh": "handoff" },
+        "RB": {
+          "action": "carry",
+          "path": [[3, 3.5], [3.5, 5], [3.5, 11]],
+          "aim": "Inside leg of the play-side guard",
+          "read": "First down lineman past the center: bang the crease, bend behind the center, or bounce"
+        }
+      },
+      "read": "No quarterback read in the base version. Tag it as zone read to leave the back-side end for the quarterback.",
+      "bestVs": ["light-box", "cover-2", "cover-4"],
+      "struggleVs": ["loaded-box"],
+      "coachingPoints": [
+        "Covered linemen block their man; uncovered linemen help play side, then climb to a linebacker.",
+        "The back presses the line before he cuts. A cut made too early lets linebackers fit.",
+        "The back-side cutoff is what makes the cutback lane."
+      ]
+    },
+    {
+      "id": "outside-zone",
+      "name": "Outside Zone Right",
+      "type": "run",
+      "formation": "uc-doubles",
+      "concept": "Wide zone. Stretch every gap sideways until one opens; one cut and go.",
+      "assignments": {
+        "LT": { "action": "block", "block": "cutoff", "direction": "right" },
+        "LG": { "action": "block", "block": "cutoff", "direction": "right" },
+        "C": { "action": "block", "block": "reach", "direction": "right" },
+        "RG": { "action": "block", "block": "reach", "direction": "right" },
+        "RT": { "action": "block", "block": "reach", "direction": "right" },
+        "Y": { "action": "block", "block": "reach", "direction": "right", "target": "end man on the line" },
+        "X": { "action": "block", "block": "cutoff", "target": "back-side safety" },
+        "H": { "action": "block", "block": "cutoff", "target": "nickel" },
+        "Z": { "action": "block", "block": "stalk" },
+        "QB": { "action": "qb", "drop": "none", "mesh": "handoff", "path": [[1.5, -4], [-3, -6]] },
+        "RB": {
+          "action": "carry",
+          "path": [[5, 6], [6.5, 9], [7, 16]],
+          "aim": "Outside leg of the tight end",
+          "read": "End man on the line, then the next defender inside: bounce if reached, bang if the edge is set, bend if the defense over-runs"
+        }
+      },
+      "read": "After the handoff the quarterback carries out the bootleg fake to hold the back-side end.",
+      "bestVs": ["light-box", "cover-2", "cover-4", "cover-6"],
+      "struggleVs": ["loaded-box", "pressure"],
+      "coachingPoints": [
+        "Linemen win with their second step. If the defender cannot be reached, run him to the sideline.",
+        "The back makes one cut and gets vertical. No dancing.",
+        "Every bootleg and play-action pass in this family must start with these same steps."
+      ]
+    },
+    {
+      "id": "power",
+      "name": "Power Right",
+      "type": "run",
+      "formation": "i-pro-right",
+      "concept": "Gap run. Down blocks play side, the fullback kicks out the end man, the back-side guard pulls through the hole.",
+      "assignments": {
+        "LT": { "action": "block", "block": "hinge" },
+        "LG": { "action": "block", "block": "pull-wrap", "target": "play-side linebacker", "path": [[4.5, -1.2], [5.5, 3]] },
+        "C": { "action": "block", "block": "down", "target": "back-side defensive tackle" },
+        "RG": { "action": "block", "block": "double", "target": "play-side defensive tackle to the back-side linebacker" },
+        "RT": { "action": "block", "block": "double", "target": "play-side defensive tackle to the back-side linebacker" },
+        "Y": { "action": "block", "block": "down", "target": "defensive end" },
+        "X": { "action": "block", "block": "cutoff", "target": "back-side safety" },
+        "Z": { "action": "block", "block": "stalk" },
+        "QB": { "action": "qb", "drop": "none", "mesh": "handoff", "path": [[0.5, -4]] },
+        "FB": { "action": "block", "block": "kick-out", "target": "end man on the line", "path": [[5.5, 4]] },
+        "RB": {
+          "action": "carry",
+          "path": [[0.5, 2], [3.5, 6.5], [4, 13]],
+          "aim": "Play-side B gap, inside the kick-out",
+          "read": "Follow the pulling guard"
+        }
+      },
+      "read": "None. The play wins on angles and an extra blocker at the point of attack.",
+      "bestVs": ["light-box", "cover-2", "cover-4"],
+      "struggleVs": ["loaded-box"],
+      "coachingPoints": [
+        "The double team moves the tackle first; one blocker comes off only when the linebacker shows.",
+        "The pulling guard stays square and reads the kick-out: inside it if the end widens, around it if he squeezes.",
+        "The back is patient for one step so the puller clears, then downhill."
+      ]
+    },
+    {
+      "id": "counter-gt",
+      "name": "GT Counter Right",
+      "type": "run",
+      "formation": "gun-doubles",
+      "concept": "Gap run with misdirection. The back-side guard kicks out, the back-side tackle wraps, the quarterback reads the unblocked back-side end.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pull-wrap", "target": "play-side linebacker", "path": [[6, -1.5], [6.8, 2.5]] },
+        "LG": { "action": "block", "block": "pull-kick", "target": "end man on the line", "path": [[6.5, -1], [7.2, 0.5]] },
+        "C": { "action": "block", "block": "down", "target": "back-side defensive tackle" },
+        "RG": { "action": "block", "block": "down" },
+        "RT": { "action": "block", "block": "down" },
+        "Y": { "action": "block", "block": "down", "target": "first linebacker inside" },
+        "X": { "action": "block", "block": "stalk" },
+        "H": { "action": "block", "block": "stalk" },
+        "Z": { "action": "block", "block": "stalk" },
+        "QB": { "action": "qb", "drop": "none", "mesh": "read", "readKey": "E2" },
+        "RB": {
+          "action": "carry",
+          "path": [[-0.5, 0.5], [3, 3.5], [5.5, 6], [6, 12]],
+          "aim": "Inside the guard's kick-out",
+          "read": "Follow the tackle through the hole"
+        }
+      },
+      "read": "The back-side end is unblocked because both pullers left. He stays home: give. He chases the pullers down the line: the quarterback keeps and runs where he left.",
+      "bestVs": ["light-box", "cover-1", "cover-4"],
+      "struggleVs": ["pressure", "loaded-box"],
+      "coachingPoints": [
+        "The back's counter step holds the linebackers long enough for the down blocks to seal them.",
+        "The guard kicks out the first defender to show past the tight end; if that defender squeezes, log him and the tackle goes around.",
+        "Down blocks must stop penetration, which kills pullers."
+      ]
+    },
+    {
+      "id": "slant-flat",
+      "name": "Slant-Flat",
+      "type": "pass",
+      "formation": "gun-doubles",
+      "concept": "Quick-game horizontal stretch on the flat defender, mirrored on both sides.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "RB": { "action": "block", "block": "pass-set", "target": "first linebacker to show, inside out" },
+        "X": { "action": "route", "route": "slant", "path": [[0, 3], [6, 9]] },
+        "H": { "action": "route", "route": "flat", "path": [[-4, 3], [-9, 4]] },
+        "Z": { "action": "route", "route": "slant", "path": [[0, 4], [-6, 10]] },
+        "Y": { "action": "route", "route": "flat", "path": [[3, 2.5], [9, 4]] },
+        "QB": { "action": "qb", "drop": "quick", "mesh": "none" }
+      },
+      "read": "Pick a side before the snap by leverage and space. Read the flat defender: he widens with the flat, throw the slant; he sits in the slant window, throw the flat.",
+      "bestVs": ["cover-3", "cover-4", "cover-1", "pressure"],
+      "struggleVs": ["cover-2", "tampa-2"],
+      "coachingPoints": [
+        "The slant must win inside and stay skinny; drifting upfield brings the safety into the play.",
+        "The ball is out on the quarterback's first hitch. Against Cover 2 the squat corner sits on the flat and the hook defender closes the slant.",
+        "The slant is the hot throw against pressure."
+      ]
+    },
+    {
+      "id": "stick",
+      "name": "Stick",
+      "type": "pass",
+      "formation": "gun-trey-right",
+      "concept": "Quick-game triangle to the three-receiver side: a clearing fade, a flat, and a stick route.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "RB": { "action": "block", "block": "pass-set", "target": "first linebacker to show, inside out" },
+        "X": { "action": "route", "route": "slant", "path": [[0, 3], [6, 9]] },
+        "Y": { "action": "route", "route": "stick", "path": [[0.5, 6], [1.5, 6]] },
+        "H": { "action": "route", "route": "flat", "path": [[1, 3.5], [7, 4.5]] },
+        "Z": { "action": "route", "route": "fade", "path": [[1.5, 5], [2, 22]] },
+        "QB": { "action": "qb", "drop": "quick", "mesh": "none" }
+      },
+      "read": "Fade is an alert against press with no safety over the top. Then read the flat defender: he widens with the flat, throw the stick; he hangs inside on the stick, throw the flat.",
+      "bestVs": ["cover-3", "cover-4", "cover-6"],
+      "struggleVs": ["cover-1", "cover-2"],
+      "coachingPoints": [
+        "The stick runner turns out against a defender inside him and sits against one outside him.",
+        "A completion for 5 yards on first down is a win.",
+        "X on the back side is the answer when the defense overplays trips."
+      ]
+    },
+    {
+      "id": "smash",
+      "name": "Smash",
+      "type": "pass",
+      "formation": "gun-doubles",
+      "concept": "High-low on the cornerback: a hitch underneath him, a corner route behind him.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "X": { "action": "route", "route": "hitch", "path": [[0, 6], [0.5, 5]] },
+        "H": { "action": "route", "route": "corner", "path": [[0, 11], [-7, 19]] },
+        "Z": { "action": "route", "route": "hitch", "path": [[0, 6], [-0.5, 5]] },
+        "Y": { "action": "route", "route": "corner", "path": [[0.5, 11], [8, 19]] },
+        "RB": { "action": "route", "route": "check-down", "path": [[1, 5], [2, 8]] },
+        "QB": { "action": "qb", "drop": "three-step", "mesh": "none" }
+      },
+      "read": "Read the cornerback on the chosen side: he sinks under the corner route, throw the hitch; he squats on the hitch, throw the corner into the hole behind him.",
+      "bestVs": ["cover-2", "tampa-2", "cover-6"],
+      "struggleVs": ["cover-4", "cover-3"],
+      "coachingPoints": [
+        "The corner route is thrown to a spot away from the safety, at about 20 yards near the sideline.",
+        "Against Cover 3 the deep-third corner is already over the top, so take the hitch.",
+        "Against Quarters the safety or a Palms corner takes the corner route away."
+      ]
+    },
+    {
+      "id": "four-verts",
+      "name": "Four Verticals",
+      "type": "pass",
+      "formation": "gun-doubles",
+      "concept": "Four receivers on vertical landmarks. More deep threats than a one- or two-deep coverage has deep defenders.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "X": { "action": "route", "route": "go", "path": [[0, 30]] },
+        "H": { "action": "route", "route": "seam", "path": [[3, 8], [5, 30]] },
+        "Y": { "action": "route", "route": "seam", "path": [[0.5, 30]] },
+        "Z": { "action": "route", "route": "go", "path": [[0, 30]] },
+        "RB": { "action": "route", "route": "check-down", "path": [[1, 5], [2, 8]] },
+        "QB": { "action": "qb", "drop": "five-step", "mesh": "none" }
+      },
+      "read": "One deep safety: hold him with your eyes and throw the seam he leaves, on a line at 18 to 22 yards. Two deep safeties: a seam bends across the middle between them, or throw the hole shot outside against Cover 2.",
+      "bestVs": ["cover-3", "cover-2", "cover-1"],
+      "struggleVs": ["cover-4", "pressure"],
+      "coachingPoints": [
+        "Landmarks matter: outside receivers on the bottom of the numbers, seams 2 yards outside the hashes.",
+        "The seam ball is thrown before the receiver clears the linebackers, not lofted.",
+        "It needs time. Check the ball down against pressure."
+      ]
+    },
+    {
+      "id": "mesh",
+      "name": "Mesh",
+      "type": "pass",
+      "formation": "gun-doubles",
+      "concept": "Two shallow crossers rub underneath, with a corner route over the top and the back on a wheel.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "X": { "action": "route", "route": "corner", "path": [[1, 11], [-4, 19]] },
+        "H": { "action": "route", "route": "shallow", "path": [[2, 3.5], [20, 5.5]] },
+        "Y": { "action": "route", "route": "shallow", "path": [[-1, 5], [-16, 7]] },
+        "Z": { "action": "route", "route": "post", "path": [[0, 12], [-6, 22]] },
+        "RB": { "action": "route", "route": "wheel", "path": [[-6, 3], [-10, 6], [-12, 20]] },
+        "QB": { "action": "qb", "drop": "three-step", "mesh": "none" }
+      },
+      "read": "Against man: throw the crosser who comes free off the rub, hitting him on the run. Against zone: the crossers settle in the windows between the hook defenders. The corner route is the alert against a squat corner, the wheel against a linebacker in man.",
+      "bestVs": ["cover-1", "cover-0", "2-man"],
+      "struggleVs": ["cover-3", "cover-4"],
+      "coachingPoints": [
+        "The tight end sets the depth of the mesh at 6 yards; the slot passes under him close enough to touch.",
+        "Crossers keep running against man and sit down against zone.",
+        "It is a five-man protection, so the ball must come out against pressure."
+      ]
+    },
+    {
+      "id": "dagger",
+      "name": "Dagger",
+      "type": "pass",
+      "formation": "gun-doubles",
+      "concept": "A seam clears the deep middle, a deep dig comes in behind it, and a drag holds the hook defenders down.",
+      "assignments": {
+        "LT": { "action": "block", "block": "pass-set" },
+        "LG": { "action": "block", "block": "pass-set" },
+        "C": { "action": "block", "block": "pass-set" },
+        "RG": { "action": "block", "block": "pass-set" },
+        "RT": { "action": "block", "block": "pass-set" },
+        "X": { "action": "route", "route": "drag", "path": [[3, 3], [20, 5]] },
+        "H": { "action": "route", "route": "hitch", "path": [[0, 6], [0.5, 5]] },
+        "Y": { "action": "route", "route": "seam", "path": [[0.5, 30]] },
+        "Z": { "action": "route", "route": "dig", "path": [[0, 15], [-14, 16]] },
+        "RB": { "action": "route", "route": "flat", "path": [[4, 3], [12, 6]] },
+        "QB": { "action": "qb", "drop": "five-step", "mesh": "none" }
+      },
+      "read": "The seam is an alert if the safeties split wide. Then read the hook defender on the dig side: he sinks under the dig, throw the drag; he jumps the drag, throw the dig into the space behind the linebackers.",
+      "bestVs": ["cover-3", "cover-1", "cover-4"],
+      "struggleVs": ["cover-2", "tampa-2", "pressure"],
+      "coachingPoints": [
+        "The seam must threaten the safety to carry him out of the dig window.",
+        "The dig is flat across the field at 15 and thrown as the receiver clears the hook defender.",
+        "It is a long-developing play: protect it, or call it when the rush is contained."
+      ]
+    },
+    {
+      "id": "pa-boot-flood",
+      "name": "Play-Action Boot Flood",
+      "type": "play-action",
+      "formation": "uc-doubles",
+      "concept": "Fake outside zone left, quarterback boots right to three receivers at three depths.",
+      "assignments": {
+        "LT": { "action": "block", "block": "reach", "direction": "left" },
+        "LG": { "action": "block", "block": "reach", "direction": "left" },
+        "C": { "action": "block", "block": "reach", "direction": "left" },
+        "RG": { "action": "block", "block": "reach", "direction": "left" },
+        "RT": { "action": "block", "block": "reach", "direction": "left" },
+        "RB": { "action": "fake", "path": [[-4, 3], [-7, 6]] },
+        "X": { "action": "route", "route": "post", "path": [[0, 12], [7, 24]] },
+        "H": { "action": "route", "route": "deep-cross", "path": [[4, 6], [14, 13], [22, 15]] },
+        "Y": { "action": "route", "route": "flat", "path": [[-0.5, 1], [6, 3], [11, 4]] },
+        "Z": { "action": "route", "route": "go", "path": [[0.5, 10], [1, 30]] },
+        "QB": { "action": "qb", "drop": "boot", "mesh": "fake", "path": [[-1.5, -3], [1, -6], [8, -7], [11, -5]] }
+      },
+      "read": "Low to high on the boot side: the flat now, then the crosser at 12 to 15 yards, then run. The go route is an alert if the deep-third defender is beaten.",
+      "bestVs": ["cover-3", "cover-1", "loaded-box"],
+      "struggleVs": ["cover-2", "pressure"],
+      "coachingPoints": [
+        "The first two steps of every lineman and the back are identical to outside zone.",
+        "The tight end blocks down for a count before releasing to the flat, so the end loses him.",
+        "The back-side end is unblocked. If he does not chase the run fake, the quarterback throws the flat immediately or throws it away."
+      ]
+    },
+    {
+      "id": "rpo-glance",
+      "name": "Inside Zone Glance RPO",
+      "type": "rpo",
+      "formation": "gun-doubles",
+      "concept": "Inside zone with a skinny post behind the weak-side conflict defender, and a bubble as the pre-snap gift.",
+      "assignments": {
+        "LT": { "action": "block", "block": "cutoff", "direction": "right" },
+        "LG": { "action": "block", "block": "zone", "direction": "right" },
+        "C": { "action": "block", "block": "zone", "direction": "right" },
+        "RG": { "action": "block", "block": "zone", "direction": "right" },
+        "RT": { "action": "block", "block": "zone", "direction": "right" },
+        "Y": { "action": "block", "block": "base", "target": "end man on the line" },
+        "X": { "action": "route", "route": "glance", "path": [[0, 7], [4, 14]] },
+        "H": { "action": "route", "route": "bubble", "path": [[-3, -1], [-7, -1]] },
+        "Z": { "action": "block", "block": "stalk" },
+        "QB": { "action": "qb", "drop": "none", "mesh": "read", "readKey": "W" },
+        "RB": {
+          "action": "carry",
+          "path": [[3, 3.5], [3.5, 5], [3.5, 11]],
+          "aim": "Inside leg of the play-side guard",
+          "read": "First down lineman past the center"
+        }
+      },
+      "read": "Before the snap: if nobody covers the slot, throw the bubble. After the snap, ride the mesh and read the weak hook defender: he steps up to fit the run, pull and throw the glance behind him; he stays in the throwing lane, hand off.",
+      "bestVs": ["cover-3", "cover-4", "loaded-box"],
+      "struggleVs": ["cover-1", "cover-0", "cover-2"],
+      "coachingPoints": [
+        "The ball must be out quickly: linemen may be only 1 yard downfield.",
+        "The glance breaks on the fifth step at a shallow angle, behind the linebacker and in front of the safety.",
+        "Against man coverage there is no conflict defender, so it is a handoff."
+      ]
+    }
+  ]
+}

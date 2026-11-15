@@ -1,0 +1,155 @@
+{
+  "zones": {
+    "flat-left": { "x": [-26.67, -13], "y": [0, 7] },
+    "flat-right": { "x": [13, 26.67], "y": [0, 7] },
+    "curl-left": { "x": [-13, -6], "y": [7, 14] },
+    "curl-right": { "x": [6, 13], "y": [7, 14] },
+    "hook-left": { "x": [-6, 0], "y": [5, 12] },
+    "hook-right": { "x": [0, 6], "y": [5, 12] },
+    "hole": { "x": [-4, 4], "y": [7, 13] },
+    "tampa-middle": { "x": [-6, 6], "y": [12, 22] },
+    "deep-third-left": { "x": [-26.67, -8.89], "y": [14, 45] },
+    "deep-third-middle": { "x": [-8.89, 8.89], "y": [14, 45] },
+    "deep-third-right": { "x": [8.89, 26.67], "y": [14, 45] },
+    "deep-half-left": { "x": [-26.67, 0], "y": [14, 45] },
+    "deep-half-right": { "x": [0, 26.67], "y": [14, 45] },
+    "deep-quarter-left-outside": { "x": [-26.67, -13.33], "y": [12, 45] },
+    "deep-quarter-left-inside": { "x": [-13.33, 0], "y": [12, 45] },
+    "deep-quarter-right-inside": { "x": [0, 13.33], "y": [12, 45] },
+    "deep-quarter-right-outside": { "x": [13.33, 26.67], "y": [12, 45] }
+  },
+  "defenses": [
+    {
+      "id": "nickel-cover-3-sky",
+      "name": "Nickel Over, Cover 3 Sky",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "cover-3",
+      "shell": "MOFC",
+      "notes": "Four rush, three deep, four under. The strong safety drops down as the strong curl-flat defender and has force.",
+      "players": [
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "B-right" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "M", "x": 0.8, "y": 4.5, "assignment": { "type": "zone", "zones": ["hook-right"] } },
+        { "id": "W", "x": -2.5, "y": 4.5, "assignment": { "type": "zone", "zones": ["hook-left"] } },
+        { "id": "N", "x": -9, "y": 5, "assignment": { "type": "zone", "zones": ["curl-left", "flat-left"] } },
+        { "id": "SS", "x": 7, "y": 7, "assignment": { "type": "zone", "zones": ["curl-right", "flat-right"] } },
+        { "id": "FS", "x": 0, "y": 13, "assignment": { "type": "zone", "zones": ["deep-third-middle"] } },
+        { "id": "C1", "x": -18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-third-left"] } },
+        { "id": "C2", "x": 18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-third-right"] } }
+      ]
+    },
+    {
+      "id": "nickel-cover-1-rat",
+      "name": "Nickel Over, Cover 1 Rat",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "cover-1",
+      "shell": "MOFC",
+      "notes": "Four rush, man on all five eligibles, a deep middle safety, and the Mike as the rat in the hole.",
+      "players": [
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "B-right" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "M", "x": 0.8, "y": 4.5, "assignment": { "type": "zone", "zones": ["hole"] } },
+        { "id": "W", "x": -2.5, "y": 4.5, "assignment": { "type": "man", "target": "RB" } },
+        { "id": "N", "x": -9.5, "y": 3, "assignment": { "type": "man", "target": "H" } },
+        { "id": "SS", "x": 5, "y": 7, "assignment": { "type": "man", "target": "Y" } },
+        { "id": "FS", "x": 0, "y": 13, "assignment": { "type": "zone", "zones": ["deep-third-middle"] } },
+        { "id": "C1", "x": -18, "y": 1, "assignment": { "type": "man", "target": "X" } },
+        { "id": "C2", "x": 17.5, "y": 1.5, "assignment": { "type": "man", "target": "Z" } }
+      ]
+    },
+    {
+      "id": "nickel-tampa-2",
+      "name": "Nickel, Tampa 2",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "tampa-2",
+      "shell": "MOFO",
+      "notes": "Four rush, two deep halves, corners squatting in the flats, and the Mike running the deep middle.",
+      "players": [
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "B-right" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "M", "x": -0.5, "y": 4.5, "assignment": { "type": "zone", "zones": ["tampa-middle"] } },
+        { "id": "W", "x": 3, "y": 4.5, "assignment": { "type": "zone", "zones": ["hook-right", "curl-right"] } },
+        { "id": "N", "x": -9, "y": 5, "assignment": { "type": "zone", "zones": ["hook-left", "curl-left"] } },
+        { "id": "C1", "x": -18, "y": 5, "assignment": { "type": "zone", "zones": ["flat-left"] } },
+        { "id": "C2", "x": 18, "y": 5, "assignment": { "type": "zone", "zones": ["flat-right"] } },
+        { "id": "FS", "x": -12, "y": 13, "assignment": { "type": "zone", "zones": ["deep-half-left"] } },
+        { "id": "SS", "x": 12, "y": 13, "assignment": { "type": "zone", "zones": ["deep-half-right"] } }
+      ]
+    },
+    {
+      "id": "nickel-quarters",
+      "name": "Nickel, Quarters",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "cover-4",
+      "shell": "MOFO",
+      "notes": "Four rush, four deep, three under. Safeties read #2 and are fast run fitters. Stored here as spot zones; match rules are a later modeling step.",
+      "players": [
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "B-right" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "M", "x": 0, "y": 4.5, "assignment": { "type": "zone", "zones": ["hole"] } },
+        { "id": "W", "x": 4, "y": 4.5, "assignment": { "type": "zone", "zones": ["curl-right", "flat-right"] } },
+        { "id": "N", "x": -9, "y": 5, "assignment": { "type": "zone", "zones": ["curl-left", "flat-left"] } },
+        { "id": "C1", "x": -18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-quarter-left-outside"] } },
+        { "id": "FS", "x": -7, "y": 10, "assignment": { "type": "zone", "zones": ["deep-quarter-left-inside"] } },
+        { "id": "SS", "x": 7, "y": 10, "assignment": { "type": "zone", "zones": ["deep-quarter-right-inside"] } },
+        { "id": "C2", "x": 18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-quarter-right-outside"] } }
+      ]
+    },
+    {
+      "id": "nickel-fire-zone",
+      "name": "Nickel Fire Zone (weak overload)",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "cover-3",
+      "shell": "MOFO",
+      "notes": "Five rush from the offense's left: the nickel off the edge and the Will through the A gap, with the line slanting. The strong end drops. Three deep, three under. Shown from a two-high shell; the strong safety rotates down over the slot at the snap.",
+      "players": [
+        { "id": "N", "x": -8, "y": 2, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "B-left" } },
+        { "id": "W", "x": -2.5, "y": 4.5, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "A-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "zone", "zones": ["curl-right", "flat-right"] } },
+        { "id": "M", "x": 0.8, "y": 4.5, "assignment": { "type": "zone", "zones": ["hole"] } },
+        { "id": "SS", "x": -8, "y": 11, "assignment": { "type": "zone", "zones": ["curl-left", "flat-left"] } },
+        { "id": "FS", "x": 6, "y": 12, "assignment": { "type": "zone", "zones": ["deep-third-middle"] } },
+        { "id": "C1", "x": -18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-third-left"] } },
+        { "id": "C2", "x": 18, "y": 7, "assignment": { "type": "zone", "zones": ["deep-third-right"] } }
+      ]
+    },
+    {
+      "id": "nickel-cover-0",
+      "name": "Nickel, Cover 0 Pressure",
+      "personnel": "nickel",
+      "front": "over",
+      "coverage": "cover-0",
+      "shell": "MOFC",
+      "notes": "Six rush with both linebackers. Man on every eligible with inside leverage and no deep help. The offense can block six at most from this set.",
+      "players": [
+        { "id": "E1", "x": 5.3, "y": 1, "assignment": { "type": "rush", "gap": "contain-right" } },
+        { "id": "T1", "x": 2.2, "y": 1, "assignment": { "type": "rush", "gap": "B-right" } },
+        { "id": "T2", "x": -0.7, "y": 1, "assignment": { "type": "rush", "gap": "B-left" } },
+        { "id": "E2", "x": -3.8, "y": 1, "assignment": { "type": "rush", "gap": "contain-left" } },
+        { "id": "M", "x": 0.6, "y": 1.5, "assignment": { "type": "rush", "gap": "A-right" } },
+        { "id": "W", "x": -0.6, "y": 1.5, "assignment": { "type": "rush", "gap": "A-left" } },
+        { "id": "N", "x": -9.5, "y": 3, "assignment": { "type": "man", "target": "H" } },
+        { "id": "SS", "x": 5, "y": 6, "assignment": { "type": "man", "target": "Y" } },
+        { "id": "FS", "x": -1, "y": 8, "assignment": { "type": "man", "target": "RB" } },
+        { "id": "C1", "x": -17.5, "y": 2, "assignment": { "type": "man", "target": "X" } },
+        { "id": "C2", "x": 17, "y": 2, "assignment": { "type": "man", "target": "Z" } }
+      ]
+    }
+  ]
+}
