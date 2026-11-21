@@ -131,6 +131,37 @@ button:disabled { opacity: 0.5; cursor: default; }
 .tags .good { color: var(--good); }
 .tags .bad { color: var(--bad); }
 
+/* Tablets and phones: one column, the field first, then the playbook pickers, then the reading. */
 @media (max-width: 1000px) {
-  .app { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'head' 'main' 'aside' 'nav'; }
+  .app { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'head' 'main' 'nav' 'aside'; gap: 12px; }
+  .app > * { min-width: 0; }
 }
+
+/* Phones. Bigger touch targets, and the field sized to leave room for the controls. */
+@media (max-width: 600px) {
+  html { -webkit-text-size-adjust: 100%; }
+  .app { padding: 12px 16px 24px; }
+  header h1 { font-size: 1.15rem; }
+  header p { font-size: 0.9rem; }
+  nav, aside section { padding: 4px 12px 12px; }
+  nav summary { min-height: 44px; display: flex; align-items: center; }
+  .chip, .controls button, aside button {
+    min-height: 40px;
+    padding: 6px 14px;
+    font-size: 0.92rem;
+    touch-action: manipulation;
+  }
+  .chips { gap: 8px; }
+  .plays button { padding: 10px; min-height: 48px; }
+  .plays span { font-size: 0.85rem; }
+  .field { max-height: 62vh; }
+  .player text { font-size: 1px; } /* the field is drawn in yards, so the labels grow with it: about 7px on screen */
+  .controls { gap: 10px; }
+  .controls input[type='range'] { flex-basis: 100%; order: -1; min-height: 32px; }
+  .controls select { min-height: 40px; padding: 0 6px; }
+  .controls label { font-size: 0.92rem; }
+  .note, .meta { font-size: 0.9rem; }
+}
+
+/* Hit area for each player: the drawn dot is small on a phone, so a transparent circle a bit wider takes the tap. */
+.player circle.hit { fill: transparent; stroke: none; }

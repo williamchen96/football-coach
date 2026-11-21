@@ -129,6 +129,7 @@ export function Field({ formation, play, model, defense, keyId, zones, t, layers
         const [x, y] = model.at(p.id, t)!;
         return (
           <g key={p.id} className={`player offense ${isSelected('offense', p.id) ? 'on' : ''}`} {...pick({ side: 'offense', id: p.id })}>
+            <circle className="hit" cx={x} cy={-y} r={1.6} />
             <circle cx={x} cy={-y} r={0.62} />
             {layers.labels && <text x={x} y={-y}>{p.id}</text>}
           </g>
@@ -143,6 +144,7 @@ export function Field({ formation, play, model, defense, keyId, zones, t, layers
             className={`player defense ${isSelected('defense', d.id) ? 'on' : ''} ${d.id === keyId ? 'key' : ''}`}
             {...pick({ side: 'defense', id: d.id })}
           >
+            <circle className="hit" cx={x} cy={-y} r={1.6} />
             <rect x={x - 0.58} y={-y - 0.58} width={1.16} height={1.16} rx={0.15} />
             {layers.labels && <text x={x} y={-y}>{d.id.replace(/\d/, '')}</text>}
           </g>
